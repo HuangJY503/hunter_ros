@@ -32,13 +32,8 @@ Nvidia Jeston TX2/Xavier/XavierNX have CAN controller(s) integrated in the main 
 
     ```
     $ cd ~/catkin_ws/src
-<<<<<<< HEAD
     $ git clone https://github.com/agilexrobotics/agx_sdk.git
-    $ git clone https://github.com/agilexrobotics/agx_sdk.git
-=======
-    $ git clone https://github.com/westonrobot/wrp_sdk.git
-    $ git clone https://github.com/westonrobot/hunter_base.git
->>>>>>> f212b65a0109dec1dc49dd970d8150b640fc791c
+    $ git clone https://github.com/agilexrobotics/wrp_sdk.git
     $ cd ..
     $ catkin_make
     ```
@@ -49,6 +44,11 @@ Nvidia Jeston TX2/Xavier/XavierNX have CAN controller(s) integrated in the main 
 
     ```
     $ roslaunch hunter_bringup hunter_robot_base.launch
+    ```
+* Start the keyboard node to control the real robot
+
+    ```
+    $ roslaunch hunter_bringup hunter_teleop_keyboard.launch
     ```
     
 **SAFETY PRECAUSION**: 
