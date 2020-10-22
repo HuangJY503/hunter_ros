@@ -16,3 +16,5 @@ float64 battery_voltage
 
 # motor state
 HunterMotorState[3] motor_states
+# driver state
+HunterDriverState[3] driver_states
