@@ -130,7 +130,7 @@ void HunterROSMessenger::PublishStateToROS() {
   double left_vel = -state.motor_H_state[2].rpm / 60.0 * 2 * M_PI /
                     HunterParams::transmission_reduction_rate *
                     HunterParams::wheel_radius;
-  double right_vel = state.motor_H_state[3].rpm / 60.0 * 2 * M_PI /
+  double right_vel = state.motor_H_state[1].rpm / 60.0 * 2 * M_PI /
                      HunterParams::transmission_reduction_rate *
                      HunterParams::wheel_radius;
   status_msg.linear_velocity = (left_vel + right_vel) / 2.0;
@@ -142,9 +142,9 @@ void HunterROSMessenger::PublishStateToROS() {
   //   double phi = ConvertInnerAngleToCentral(state.steering_angle);
   status_msg.steering_angle = phi;
 
-  status_msg.base_state = state.base_state;
-  status_msg.control_mode = state.control_mode;
-  status_msg.fault_code = state.fault_code;
+  status_msg.base_state = state.base_state;//
+  status_msg.control_mode = state.control_mode;//
+  status_msg.fault_code = state.fault_code;//
   status_msg.battery_voltage = state.battery_voltage;
 
   for (int i = 0; i < 3; ++i) {
