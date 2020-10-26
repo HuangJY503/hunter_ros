@@ -23,6 +23,8 @@ int main(int argc, char **argv) {
     std::cout << "control mode: " << static_cast<int>(state.control_mode)
               << " , base state: " << static_cast<int>(state.base_state)
               << std::endl;
+    std::cout << "parking mode: " << static_cast<int>(state.park_mode)
+              << std::endl;
     std::cout << "battery voltage: " << state.battery_voltage << std::endl;
     std::cout << "velocity (linear, angular): " << state.linear_velocity << ", "
               << state.steering_angle << std::endl;

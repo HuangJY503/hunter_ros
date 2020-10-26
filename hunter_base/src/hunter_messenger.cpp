@@ -142,9 +142,12 @@ void HunterROSMessenger::PublishStateToROS() {
   //   double phi = ConvertInnerAngleToCentral(state.steering_angle);
   status_msg.steering_angle = phi;
 
-  status_msg.base_state = state.base_state;//
-  status_msg.control_mode = state.control_mode;//
-  status_msg.fault_code = state.fault_code;//
+  status_msg.base_state = state.base_state;
+  status_msg.control_mode = state.control_mode;
+  //status_msg.control_mode2 = state.control_mode2;
+  status_msg.park_mode = state.park_mode;
+  //status_msg.park_mode2 = state.park_mode2;
+  status_msg.fault_code = state.fault_code;
   status_msg.battery_voltage = state.battery_voltage;
 
   for (int i = 0; i < 3; ++i) {
