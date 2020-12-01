@@ -38,7 +38,32 @@ Nvidia Jeston TX2/Xavier/XavierNX have CAN controller(s) integrated in the main 
     $ catkin_make
     ```
 
-3. Launch ROS nodes
+3. Setup CAN-To-USB adapter
+
+* Enable gs_usb kernel module
+    ```
+    $ sudo modprobe gs_usb
+    ```
+    
+* first time use hunter-ros package
+   ```
+   $ rosrun hunter_bringup setup_can2usb.bash
+   ```
+   
+* if not the first time use hunter-ros package(Run this command every time you turn off the power) 
+   ```
+   $ rosrun hunter_bringup bringup_can2usb.bash
+   ```
+   
+* Testing command
+    ```
+    # receiving data from can0
+    $ candump can0
+    # send data to can0
+    $ cansend can0 001#1122334455667788
+    ```
+
+4. Launch ROS nodes
 
 * Start the base node for the real robot
 
